@@ -32,3 +32,62 @@
         }
     ]
 }
+
+
+
+{
+    "Sintomas": [
+        "verbatim-string"
+    ],
+    "Acompanhamento": "verbatim-string",
+    "Procedimentos": [
+        {
+            "Data": "date-time",
+            "Descricao": "verbatim-string"
+        }
+    ]
+}
+
+
+
+
+{
+    "Hospitalizacao": {
+        "Data_Entrada": "date-time",
+        "Data_Saida": "date-time",
+        "Dias_Hospitalizado": "integer",
+        "obito": "boolean"
+
+    },
+    "Sintomas": [
+        "verbatim-string"
+    ],
+    "Acompanhamento": [
+        {
+            "Data": "date-time",
+            "Detalhes": "verbatim-string"
+        }
+    ]
+}
+
+{
+    "Hospitalizacao": {
+        "Data_Entrada": "date-time",
+        "Data_Saida": "date-time",
+        "Dias_Hospitalizado": "integer",
+        "obito": "boolean",
+        "idade": "verbatim-string",
+        "sexo": "verbatim-string"
+    },
+    "Sintomas": [
+        "verbatim-string"
+    ],
+    "Acompanhamento": [
+        {
+            "Data": "date-time",
+            "Detalhes": "verbatim-string",
+            "medicacao": "verbatim-string",
+            "sinais vitais": "verbatim-string"
+        }
+    ]
+}
