@@ -1,0 +1,34 @@
+{
+    "Entrada": {
+        "idade": "integer",
+        "sexo": "verbatim-string",
+        "data inicial internação": "date-time",
+        "motivo internação": "verbatim-string",
+        "dias internado": "integer",
+        "data saída": "date-time",
+        "obito": "boolean",
+        "Ocorrências": [
+            {
+                "data da ocorrência": "date-time",
+                "tipo de ocorrência": "verbatim-string",
+                "descrição completa ocorrência": "verbatim-string"
+            }
+        ]
+    },
+    "Usage": {
+        "Licence": "verbatim-string"
+    }
+}
+
+{
+    "Sintomas": [
+        "verbatim-string"
+    ],
+    "Acompanhamento": "verbatim-string",
+    "Procedimentos": [
+        {
+            "Data": "date-time",
+            "Descricao": "verbatim-string"
+        }
+    ]
+}
