@@ -76,29 +76,40 @@ if torch.cuda.is_available():
     if model_device.type != "cuda":
         print("⚠️ AVISO: Modelo não está na GPU mesmo com CUDA disponível!")
 
-text = """We introduce Mistral 7B, a 7–billion-parameter language model engineered for
-superior performance and efficiency. Mistral 7B outperforms the best open 13B
-model (Llama 2) across all evaluated benchmarks, and the best released 34B
-model (Llama 1) in reasoning, mathematics, and code generation. Our model
-leverages grouped-query attention (GQA) for faster inference, coupled with sliding
-window attention (SWA) to effectively handle sequences of arbitrary length with a
-reduced inference cost. We also provide a model fine-tuned to follow instructions,
-Mistral 7B – Instruct, that surpasses Llama 2 13B – chat model both on human and
-automated benchmarks. Our models are released under the Apache 2.0 license.
-Code: <https://github.com/mistralai/mistral-src>
-Webpage: <https://mistral.ai/news/announcing-mistral-7b/>"""
+text = """choque séptico. abertura: 13/01/2020, alta: 02/03/2020, estadia: 01 m 17 d 23 h, 
+leito: enfermaria, convênio: sus. [person], 58 anos, diabética com múltiplas complicações, 
+doença arterial obstrutiva periférica amputação infrapatelar direita em 29/12, 
+foi admitida na unidade de emergência no dia 12/01 por rebaixamento do nível de consciência. 
+"""
+
+#evoluiu durante internação com múltiplas intercorrências graves e complicações, 
+#com declinio funcional importante com sucessivos choques sépticos foco pulmonar e cuntâneo, 
+#infecção de ferida operatória com necessidade de ampliação de amputação de coto de membro inferior direito, 
+#choque hipovolêmico/hemorrágico, lesão renal kdigo 3 com necessidade de terapia de substituição renal, 
+#parada cardiorespiratória revertida e encefalopatia hipóxico isquêmica pós parada cardiorespiratória, 
+#infecção fúngica e pneumonia nosocomial com acinetobacter multiresistente. 
+#ampliação de amputação de coto membro inferior direito hemodiálise. óbito.
 
 template = """{
-    "Model": {
-        "Name": "",
-        "Number of parameters": "",
-        "Number of max token": "",
-        "Architecture": []
+   "Hospitalizacao": {
+        "Data_Entrada": "date-time",
+        "Data_Saida": "date-time",
+        "Dias_Hospitalizado": "integer",
+        "obito": "boolean",
+        "idade": "verbatim-string",
+        "sexo": "verbatim-string"
     },
-    "Usage": {
-        "Use case": [],
-        "Licence": ""
-    }
+    "Sintomas": [
+        "verbatim-string"
+    ],
+    "Acompanhamento": [
+        {
+            "Data": "date-time",
+            "Detalhes": "verbatim-string",
+            "medicacao": "verbatim-string",
+            "sinais vitais": "verbatim-string"
+        }
+    ]
 }"""
 
 prediction = predict_NuExtract(model, tokenizer, [text], template)[0]
